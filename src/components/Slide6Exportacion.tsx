@@ -8,8 +8,8 @@ const clientes = [
     nombre: "La Molienda Mexicana",
     pais: "USA",
     mxn2025ytd: "$6.0M",
-    mxn2026ytd: "$3.8M",
-    variacion: "-37.3%",
+    mxn2026ytd: "$5.6M",
+    variacion: "-7.7%",
     positivo: false,
     tc: "1.00 (factura en MXN)",
     nota: "Cliente #1 de exportacion",
@@ -17,36 +17,36 @@ const clientes = [
   {
     nombre: "Dulces La Mejor",
     pais: "USA",
-    mxn2025ytd: "$1.7M",
-    mxn2026ytd: "$1.4M",
-    variacion: "-16.6%",
-    positivo: false,
-    tc: "17.52",
+    mxn2025ytd: "$80K",
+    mxn2026ytd: "$90K",
+    variacion: "+12.1%",
+    positivo: true,
+    tc: "17.47",
     nota: "Factura en USD",
   },
   {
     nombre: "Puente Foods",
     pais: "USA",
     mxn2025ytd: "$0",
-    mxn2026ytd: "$437K",
+    mxn2026ytd: "$25K",
     variacion: "Nuevo",
     positivo: true,
-    tc: "17.23",
+    tc: "17.24",
     nota: "Cliente nuevo 2026",
   },
 ];
 
 const topProductos = [
-  { nombre: "Papa Diabla 5.5oz La Molienda", venta: "$2.0M" },
-  { nombre: "Papa Salada 5.5oz La Molienda", venta: "$1.5M" },
-  { nombre: "Ranchito con Chile La Molienda", venta: "$159K" },
-  { nombre: "Papa Jalapeno 5.5oz La Molienda", venta: "$104K" },
+  { nombre: "Papa Diabla 5.5oz La Molienda", venta: "$2.9M" },
+  { nombre: "Papa Salada 5.5oz La Molienda", venta: "$2.2M" },
+  { nombre: "Ranchito con Chile La Molienda", venta: "$227K" },
+  { nombre: "Papa Jalapeno 5.5oz La Molienda", venta: "$165K" },
 ];
 
 const exportAnual = [
-  { year: "2023", value: "$46.8M", bar: 86 },
-  { year: "2024", value: "$47.0M", bar: 86 },
-  { year: "2025", value: "$54.5M", bar: 100 },
+  { year: "2023", value: "$33.2M", bar: 76 },
+  { year: "2024", value: "$35.9M", bar: 82 },
+  { year: "2025", value: "$43.9M", bar: 100 },
 ];
 
 export default function Slide6Exportacion() {
@@ -123,7 +123,7 @@ export default function Slide6Exportacion() {
               </div>
             ))}
           </div>
-          <p className="text-[#27AE60] text-[10px] mt-3 font-semibold">+16.4% crecimiento 2023 a 2025</p>
+          <p className="text-[#27AE60] text-[10px] mt-3 font-semibold">+32.2% crecimiento 2023 a 2025</p>
         </div>
       </div>
     </SlideWrapper>

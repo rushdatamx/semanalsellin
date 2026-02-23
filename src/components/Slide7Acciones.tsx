@@ -7,23 +7,23 @@ const alertas = [
   {
     icon: AlertTriangle,
     color: "#E31837",
-    texto: "Feb 2026 con caida de -54.8% vs Feb 2025. Posiblemente datos incompletos (ultimo registro: 15-Feb).",
-    accion: "Verificar si hay facturas pendientes de capturar. Si el dato es real, investigar causa.",
+    texto: "Feb 2026 con caida de -12.8% vs Feb 2025 ($7.6M vs $8.7M).",
+    accion: "Verificar si hay facturas pendientes. Monitorear cierre de mes.",
     responsable: "Mario Pena",
   },
   {
     icon: AlertTriangle,
     color: "#E31837",
-    texto: "BOTANAS Y DERIVADOS cayo -95.5% YTD (de $4.5M a $202K).",
+    texto: "BOTANAS Y DERIVADOS cayo -95.5% YTD (de $4.9M a $218K).",
     accion: "Contactar al cliente. ¿Perdimos la cuenta? ¿Cambiaron de proveedor?",
     responsable: "Direccion",
   },
   {
     icon: AlertTriangle,
     color: "#E31837",
-    texto: "LA MOLIENDA MEXICANA (exportacion) cayo -37.3% YTD.",
-    accion: "Revisar estatus de ordenes pendientes. Verificar timing de pedidos.",
-    responsable: "Direccion",
+    texto: "HEB cayo -10.6% YTD ($1.1M a $1.0M). Durito concentra 45.7%.",
+    accion: "Revisar pedidos pendientes. Evaluar ampliar catalogo en la cadena.",
+    responsable: "Mario Pena",
   },
 ];
 
@@ -31,23 +31,23 @@ const positivos = [
   {
     icon: TrendingUp,
     color: "#27AE60",
-    texto: "ALSUPER crecio +130.1% YTD. Ahora es el 1er cliente nacional.",
+    texto: "ALSUPER crecio +154.0% YTD ($2.5M → $6.4M). 1er cliente nacional.",
     accion: "Reforzar relacion y explorar ampliacion de catalogo.",
     responsable: "Mario Pena",
   },
   {
     icon: TrendingUp,
     color: "#27AE60",
-    texto: "Trayectoria anual: $91.5M (2023) → $124.8M (2025), +36.5% en 2 anos.",
-    accion: "Establecer meta 2026 y monitorear mensualmente.",
-    responsable: "Direccion",
+    texto: "MERCO crecio +41.2% YTD. Tostada Roja 70PZ con $2.0M (55.7%).",
+    accion: "Mantener abasto y explorar nuevas lineas con el cliente.",
+    responsable: "Mario Pena",
   },
   {
-    icon: Info,
-    color: "#F7B500",
-    texto: "HEB cayo -17.4% YTD. PDQs y duritos concentran 85.6% de la venta.",
-    accion: "Revisar pedidos pendientes. Evaluar ampliar catalogo.",
-    responsable: "Mario Pena",
+    icon: TrendingUp,
+    color: "#27AE60",
+    texto: "Trayectoria anual: $93.8M (2023) → $128.9M (2025), +37.4% en 2 anos.",
+    accion: "Establecer meta 2026 y monitorear mensualmente.",
+    responsable: "Direccion",
   },
 ];
 

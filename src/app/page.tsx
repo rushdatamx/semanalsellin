@@ -25,9 +25,9 @@ export default function Home() {
   const Slide = slides[current].component;
 
   return (
-    <div className="min-h-screen bg-[#111] flex flex-col items-center justify-center py-8">
+    <div className="min-h-screen bg-[#E8E8E8] flex flex-col items-center justify-center py-8">
       <div className="relative">
-        <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-700/50">
+        <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-300">
           <Slide />
         </div>
 
@@ -35,7 +35,7 @@ export default function Home() {
           <button
             onClick={() => setCurrent((p) => Math.max(0, p - 1))}
             disabled={current === 0}
-            className="p-2 rounded-full bg-[#222] text-gray-400 disabled:opacity-30 hover:bg-[#333] transition-colors shadow-sm border border-gray-700/50"
+            className="p-2 rounded-full bg-white text-gray-600 disabled:opacity-30 hover:bg-gray-100 transition-colors shadow-sm border border-gray-200"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -47,7 +47,7 @@ export default function Home() {
                 onClick={() => setCurrent(i)}
                 className="w-2.5 h-2.5 rounded-full transition-colors"
                 style={{
-                  backgroundColor: i === current ? "#F7B500" : "#555",
+                  backgroundColor: i === current ? "#F7B500" : "#9CA3AF",
                 }}
               />
             ))}
@@ -56,13 +56,13 @@ export default function Home() {
           <button
             onClick={() => setCurrent((p) => Math.min(slides.length - 1, p + 1))}
             disabled={current === slides.length - 1}
-            className="p-2 rounded-full bg-[#222] text-gray-400 disabled:opacity-30 hover:bg-[#333] transition-colors shadow-sm border border-gray-700/50"
+            className="p-2 rounded-full bg-white text-gray-600 disabled:opacity-30 hover:bg-gray-100 transition-colors shadow-sm border border-gray-200"
           >
             <ChevronRight className="w-5 h-5" />
           </button>
         </div>
 
-        <p className="text-center text-gray-600 text-xs mt-3">
+        <p className="text-center text-gray-500 text-xs mt-3">
           {slides[current].label} · Slide {current + 1} / {slides.length}
         </p>
       </div>
