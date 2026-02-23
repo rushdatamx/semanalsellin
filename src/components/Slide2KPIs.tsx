@@ -40,7 +40,7 @@ export default function Slide2KPIs() {
           <div className="flex items-center justify-end gap-1 mt-1">
             <TrendingDown className="w-3 h-3 text-[#E31837]" />
             <span className="text-[#E31837] text-sm font-bold">-12.8%</span>
-            <span className="text-gray-400 text-[10px]">vs Feb 25</span>
+            <span className="text-gray-400 text-[10px]">vs $8.7M Feb 25</span>
           </div>
         </div>
         <div className="text-right animate-count-up" style={{ animationDelay: "450ms" }}>
