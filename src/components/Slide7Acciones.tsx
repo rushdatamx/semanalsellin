@@ -53,8 +53,8 @@ const positivos = [
 
 export default function Slide7Acciones() {
   return (
-    <SlideWrapper className="bg-[#1A1A1A] p-10" hideFooter>
-      <h2 className="text-3xl font-bold text-white mb-1">Insights y Acciones</h2>
+    <SlideWrapper className="bg-[#F5F5F5] p-10" hideFooter>
+      <h2 className="text-3xl font-bold text-gray-800 mb-1">Insights y Acciones</h2>
       <p className="text-gray-500 text-sm mb-5">Hallazgos clave y proximos pasos</p>
 
       <div className="grid grid-cols-2 gap-5 flex-1">
@@ -71,12 +71,12 @@ export default function Slide7Acciones() {
                   <div className="flex items-start gap-2">
                     <Icon className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: a.color }} />
                     <div>
-                      <p className="text-gray-300 text-xs mb-1">{a.texto}</p>
+                      <p className="text-gray-700 text-xs mb-1">{a.texto}</p>
                       <div className="flex items-center gap-1 text-[10px]">
-                        <ChevronRight className="w-2.5 h-2.5 text-gray-500" />
-                        <span className="text-gray-400">{a.accion}</span>
+                        <ChevronRight className="w-2.5 h-2.5 text-gray-400" />
+                        <span className="text-gray-500">{a.accion}</span>
                       </div>
-                      <p className="text-gray-600 text-[10px] mt-1">→ {a.responsable}</p>
+                      <p className="text-gray-400 text-[10px] mt-1">→ {a.responsable}</p>
                     </div>
                   </div>
                 </div>
@@ -98,12 +98,12 @@ export default function Slide7Acciones() {
                   <div className="flex items-start gap-2">
                     <Icon className="w-3.5 h-3.5 mt-0.5 shrink-0" style={{ color: a.color }} />
                     <div>
-                      <p className="text-gray-300 text-xs mb-1">{a.texto}</p>
+                      <p className="text-gray-700 text-xs mb-1">{a.texto}</p>
                       <div className="flex items-center gap-1 text-[10px]">
-                        <ChevronRight className="w-2.5 h-2.5 text-gray-500" />
-                        <span className="text-gray-400">{a.accion}</span>
+                        <ChevronRight className="w-2.5 h-2.5 text-gray-400" />
+                        <span className="text-gray-500">{a.accion}</span>
                       </div>
-                      <p className="text-gray-600 text-[10px] mt-1">→ {a.responsable}</p>
+                      <p className="text-gray-400 text-[10px] mt-1">→ {a.responsable}</p>
                     </div>
                   </div>
                 </div>
@@ -114,9 +114,9 @@ export default function Slide7Acciones() {
       </div>
 
       {/* Footer crema */}
-      <div className="mt-4 rounded-lg px-6 py-3 text-center" style={{ backgroundColor: "#FDF8F0", border: "1px solid #E8DCC8" }}>
-        <p className="text-[#1A1A1A]/60 text-xs">
-          Datos actualizados al <span className="text-[#1A1A1A] font-semibold">23 de febrero 2026</span> · Resumen Ejecutivo DELIKOS
+      <div className="mt-4 bg-[#FDF8F0] rounded-lg px-6 py-3 text-center border border-[#E8DCC8]">
+        <p className="text-gray-500 text-xs">
+          Datos actualizados al <span className="text-gray-800 font-semibold">23 de febrero 2026</span> · Resumen Ejecutivo DELIKOS
         </p>
       </div>
     </SlideWrapper>

@@ -12,7 +12,6 @@ import {
   ReferenceLine,
 } from "recharts";
 
-// Una línea por cliente: ALSUPER=dorado, MERCO=blanco(sobre dark), HEB=gris
 const data = [
   { mes: "Mar 24", alsuper: 862485, merco: 828164, heb: 108397 },
   { mes: "Abr 24", alsuper: 1572985, merco: 1018370, heb: 49912 },
@@ -45,22 +44,21 @@ const formatPesos = (v: number) => `$${(v / 1_000_000).toFixed(1)}M`;
 function CustomTooltip({ active, payload, label }: { active?: boolean; payload?: Array<{ value: number; name: string; color: string }>; label?: string }) {
   if (!active || !payload) return null;
   return (
-    <div className="bg-[#222] border border-gray-600 rounded-lg p-3 shadow-lg min-w-[160px]">
-      <p className="text-gray-400 text-xs mb-2 font-semibold">{label}</p>
+    <div className="bg-white border border-gray-200 rounded-lg p-3 shadow-lg min-w-[160px]">
+      <p className="text-gray-500 text-xs mb-2 font-semibold">{label}</p>
       {payload.map((p, i) => (
         <div key={i} className="flex items-center justify-between gap-4 text-xs mb-0.5">
           <div className="flex items-center gap-1.5">
             <div className="w-2 h-2 rounded-full" style={{ backgroundColor: p.color }} />
-            <span className="text-gray-400">{p.name}</span>
+            <span className="text-gray-500">{p.name}</span>
           </div>
-          <span className="text-white font-bold">${p.value.toLocaleString()}</span>
+          <span className="text-gray-800 font-bold">${p.value.toLocaleString()}</span>
         </div>
       ))}
     </div>
   );
 }
 
-// Badge annotations
 const badges = [
   { mes: "Mar 25", label: "ALSUPER $7.8M", color: "#F7B500", y: 7768328 },
   { mes: "Abr 25", label: "ALSUPER $7.1M", color: "#F7B500", y: 7079441 },
@@ -69,30 +67,30 @@ const badges = [
 
 export default function Slide5Tendencia() {
   return (
-    <SlideWrapper className="bg-[#1A1A1A] p-10">
-      <h2 className="text-3xl font-bold text-white mb-1">Tendencia Mensual por Cliente</h2>
+    <SlideWrapper className="bg-[#F5F5F5] p-10">
+      <h2 className="text-3xl font-bold text-gray-800 mb-1">Tendencia Mensual por Cliente</h2>
       <p className="text-gray-500 text-sm mb-3">Top 3 clientes nacionales — ultimos 24 meses</p>
 
       {/* Leyenda */}
       <div className="flex gap-5 mb-3 text-[10px]">
         <div className="flex items-center gap-1.5">
           <div className="w-8 h-0.5 bg-[#F7B500]" />
-          <span className="text-[#F7B500] font-semibold">ALSUPER</span>
+          <span className="text-[#B8860B] font-semibold">ALSUPER</span>
         </div>
         <div className="flex items-center gap-1.5">
-          <div className="w-8 h-0.5 bg-white" />
-          <span className="text-gray-300 font-semibold">MERCO</span>
+          <div className="w-8 h-0.5 bg-[#1A1A1A]" />
+          <span className="text-gray-800 font-semibold">MERCO</span>
         </div>
         <div className="flex items-center gap-1.5">
           <div className="w-8 h-0.5 bg-[#9CA3AF]" />
-          <span className="text-[#9CA3AF] font-semibold">HEB</span>
+          <span className="text-[#6B7280] font-semibold">HEB</span>
         </div>
         <div className="ml-auto flex gap-3">
           {badges.map((b, i) => (
             <span
               key={i}
               className="px-2 py-0.5 rounded-full text-[9px] font-bold"
-              style={{ backgroundColor: b.color + "25", color: b.color, border: `1px solid ${b.color}50` }}
+              style={{ backgroundColor: b.color + "20", color: b.color, border: `1px solid ${b.color}40` }}
             >
               {b.label}
             </span>
@@ -100,15 +98,15 @@ export default function Slide5Tendencia() {
         </div>
       </div>
 
-      <div className="flex-1 bg-[#222] rounded-xl border border-gray-700/50 p-4">
+      <div className="flex-1 bg-white rounded-xl border border-gray-200 shadow-sm p-4">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data} margin={{ top: 10, right: 20, left: 10, bottom: 10 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#333" />
-            <XAxis dataKey="mes" stroke="#666" fontSize={9} interval={2} angle={-45} textAnchor="end" height={40} />
-            <YAxis stroke="#666" fontSize={10} tickFormatter={formatPesos} />
+            <CartesianGrid strokeDasharray="3 3" stroke="#E5E7EB" />
+            <XAxis dataKey="mes" stroke="#9CA3AF" fontSize={9} interval={2} angle={-45} textAnchor="end" height={40} />
+            <YAxis stroke="#9CA3AF" fontSize={10} tickFormatter={formatPesos} />
             <Tooltip content={<CustomTooltip />} />
-            <ReferenceLine x="Ene 25" stroke="#555" strokeDasharray="3 3" label={{ value: "2025", position: "top", fill: "#666", fontSize: 9 }} />
-            <ReferenceLine x="Ene 26" stroke="#555" strokeDasharray="3 3" label={{ value: "2026", position: "top", fill: "#666", fontSize: 9 }} />
+            <ReferenceLine x="Ene 25" stroke="#D1D5DB" strokeDasharray="3 3" label={{ value: "2025", position: "top", fill: "#9CA3AF", fontSize: 9 }} />
+            <ReferenceLine x="Ene 26" stroke="#D1D5DB" strokeDasharray="3 3" label={{ value: "2026", position: "top", fill: "#9CA3AF", fontSize: 9 }} />
             <Line
               type="monotone"
               dataKey="alsuper"
@@ -122,9 +120,9 @@ export default function Slide5Tendencia() {
               type="monotone"
               dataKey="merco"
               name="MERCO"
-              stroke="#ffffff"
+              stroke="#1A1A1A"
               strokeWidth={2}
-              dot={{ r: 2, fill: "#fff" }}
+              dot={{ r: 2, fill: "#1A1A1A" }}
               activeDot={{ r: 5 }}
             />
             <Line
