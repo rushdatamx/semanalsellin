@@ -44,9 +44,9 @@ const topProductos = [
 ];
 
 const exportAnual = [
-  { year: "2023", value: "$46.8M" },
-  { year: "2024", value: "$47.0M" },
-  { year: "2025", value: "$54.5M" },
+  { year: "2023", value: "$46.8M", bar: 86 },
+  { year: "2024", value: "$47.0M", bar: 86 },
+  { year: "2025", value: "$54.5M", bar: 100 },
 ];
 
 export default function Slide6Exportacion() {
@@ -65,15 +65,15 @@ export default function Slide6Exportacion() {
           return (
             <div
               key={i}
-              className="bg-[#222] rounded-xl border border-gray-700/50 p-5 animate-count-up"
-              style={{ animationDelay: `${i * 150}ms` }}
+              className="rounded-xl p-5 animate-count-up"
+              style={{ animationDelay: `${i * 150}ms`, backgroundColor: "#FDF8F0", border: "1px solid #E8DCC8" }}
             >
               <div className="flex items-center justify-between mb-3">
-                <h3 className="text-white font-bold text-sm">{c.nombre}</h3>
-                <span className="text-gray-500 text-[10px] bg-gray-700/50 px-2 py-0.5 rounded">{c.pais}</span>
+                <h3 className="text-[#1A1A1A] font-bold text-sm">{c.nombre}</h3>
+                <span className="text-[#1A1A1A]/50 text-[10px] bg-[#1A1A1A]/10 px-2 py-0.5 rounded">{c.pais}</span>
               </div>
               <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-white text-2xl font-bold">{c.mxn2026ytd}</span>
+                <span className="text-[#1A1A1A] text-2xl font-bold">{c.mxn2026ytd}</span>
                 <span
                   className="text-xs font-bold flex items-center gap-0.5"
                   style={{ color }}
@@ -82,9 +82,9 @@ export default function Slide6Exportacion() {
                   {c.variacion}
                 </span>
               </div>
-              <p className="text-gray-500 text-[10px] mb-1">2025 YTD: {c.mxn2025ytd}</p>
-              <p className="text-gray-600 text-[10px]">TC: {c.tc}</p>
-              <p className="text-[#F7B500] text-[10px] mt-2">{c.nota}</p>
+              <p className="text-[#1A1A1A]/50 text-[10px] mb-1">2025 YTD: {c.mxn2025ytd}</p>
+              <p className="text-[#1A1A1A]/40 text-[10px]">TC: {c.tc}</p>
+              <p className="text-[#F7B500] text-[10px] mt-2 font-semibold">{c.nota}</p>
             </div>
           );
         })}
@@ -93,29 +93,37 @@ export default function Slide6Exportacion() {
       <div className="grid grid-cols-2 gap-4 flex-1">
         <div className="bg-[#222] rounded-xl border border-gray-700/50 p-4">
           <p className="text-gray-400 text-xs mb-3">Top productos exportacion 2026</p>
-          <div className="space-y-2">
+          <div className="space-y-2.5">
             {topProductos.map((p, i) => (
               <div key={i} className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <ArrowRight className="w-3 h-3 text-gray-600" />
+                  <ArrowRight className="w-3 h-3 text-[#F7B500]" />
                   <span className="text-gray-300 text-xs">{p.nombre}</span>
                 </div>
-                <span className="text-white font-bold text-xs">{p.venta}</span>
+                <span className="text-[#F7B500] font-bold text-xs">{p.venta}</span>
               </div>
             ))}
           </div>
         </div>
         <div className="bg-[#222] rounded-xl border border-gray-700/50 p-4">
           <p className="text-gray-400 text-xs mb-3">Exportacion anual (MXN equivalente)</p>
-          <div className="space-y-3">
+          <div className="space-y-2">
             {exportAnual.map((d, i) => (
-              <div key={i} className="flex items-center justify-between">
-                <span className="text-gray-400 text-sm">{d.year}</span>
-                <span className="text-white font-bold text-lg">{d.value}</span>
+              <div key={i}>
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-gray-400 text-xs">{d.year}</span>
+                  <span className="text-white font-bold text-sm">{d.value}</span>
+                </div>
+                <div className="w-full bg-gray-700/20 rounded-full h-2">
+                  <div
+                    className="h-2 rounded-full bg-[#F7B500] animate-bar-grow"
+                    style={{ width: `${d.bar}%`, animationDelay: `${i * 150}ms` }}
+                  />
+                </div>
               </div>
             ))}
           </div>
-          <p className="text-[#27AE60] text-[10px] mt-2 font-semibold">+16.4% crecimiento 2023→2025</p>
+          <p className="text-[#27AE60] text-[10px] mt-3 font-semibold">+16.4% crecimiento 2023 a 2025</p>
         </div>
       </div>
     </SlideWrapper>

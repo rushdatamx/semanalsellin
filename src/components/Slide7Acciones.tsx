@@ -5,7 +5,6 @@ import { AlertTriangle, TrendingUp, Info, ChevronRight } from "lucide-react";
 
 const alertas = [
   {
-    tipo: "ALTA",
     icon: AlertTriangle,
     color: "#E31837",
     texto: "Feb 2026 con caida de -54.8% vs Feb 2025. Posiblemente datos incompletos (ultimo registro: 15-Feb).",
@@ -13,7 +12,6 @@ const alertas = [
     responsable: "Mario Pena",
   },
   {
-    tipo: "ALTA",
     icon: AlertTriangle,
     color: "#E31837",
     texto: "BOTANAS Y DERIVADOS cayo -95.5% YTD (de $4.5M a $202K).",
@@ -21,7 +19,6 @@ const alertas = [
     responsable: "Direccion",
   },
   {
-    tipo: "ALTA",
     icon: AlertTriangle,
     color: "#E31837",
     texto: "LA MOLIENDA MEXICANA (exportacion) cayo -37.3% YTD.",
@@ -32,7 +29,6 @@ const alertas = [
 
 const positivos = [
   {
-    tipo: "POSITIVO",
     icon: TrendingUp,
     color: "#27AE60",
     texto: "ALSUPER crecio +130.1% YTD. Ahora es el 1er cliente nacional.",
@@ -40,7 +36,6 @@ const positivos = [
     responsable: "Mario Pena",
   },
   {
-    tipo: "POSITIVO",
     icon: TrendingUp,
     color: "#27AE60",
     texto: "Trayectoria anual: $91.5M (2023) → $124.8M (2025), +36.5% en 2 anos.",
@@ -48,7 +43,6 @@ const positivos = [
     responsable: "Direccion",
   },
   {
-    tipo: "INFO",
     icon: Info,
     color: "#F7B500",
     texto: "HEB cayo -17.4% YTD. PDQs y duritos concentran 85.6% de la venta.",
@@ -64,6 +58,7 @@ export default function Slide7Acciones() {
       <p className="text-gray-500 text-sm mb-5">Hallazgos clave y proximos pasos</p>
 
       <div className="grid grid-cols-2 gap-5 flex-1">
+        {/* Alertas */}
         <div>
           <p className="text-[#E31837] text-xs font-bold mb-3 flex items-center gap-1.5">
             <AlertTriangle className="w-3.5 h-3.5" /> ALERTAS
@@ -90,6 +85,7 @@ export default function Slide7Acciones() {
           </div>
         </div>
 
+        {/* Positivos */}
         <div>
           <p className="text-[#27AE60] text-xs font-bold mb-3 flex items-center gap-1.5">
             <TrendingUp className="w-3.5 h-3.5" /> POSITIVOS Y SEGUIMIENTO
@@ -117,9 +113,10 @@ export default function Slide7Acciones() {
         </div>
       </div>
 
-      <div className="mt-4 bg-gradient-to-r from-[#2E75B6]/10 to-[#F7B500]/10 border border-[#2E75B6]/30 rounded-lg px-6 py-3 text-center">
-        <p className="text-gray-400 text-xs">
-          Datos actualizados al <span className="text-white font-semibold">23 de febrero 2026</span> · Resumen Ejecutivo DELIKOS
+      {/* Footer crema */}
+      <div className="mt-4 rounded-lg px-6 py-3 text-center" style={{ backgroundColor: "#FDF8F0", border: "1px solid #E8DCC8" }}>
+        <p className="text-[#1A1A1A]/60 text-xs">
+          Datos actualizados al <span className="text-[#1A1A1A] font-semibold">23 de febrero 2026</span> · Resumen Ejecutivo DELIKOS
         </p>
       </div>
     </SlideWrapper>
